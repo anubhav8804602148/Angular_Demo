@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>
+    <script src="Angular_1.js"></script>
+    <link rel="stylesheet" href="angular_1.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        {{msg}}
+        <input type="text" ng-model="xvar">
+        <p id="test">{{ xvar*xvar }}</p>
+        <table> 
+            <th><td>Name</td><td>Price</td><td>Quantity</td><td>Amount</td></th>
+            <tr ng-repeat="item in xlist"><td>{{item.id}}</td><td>{{item.name}}</td><td>{{item.price}}</td><td>{{item.quantity}}</td><td><button ng-click="inc(item)">+</button><button ng-click="dec(item)">-</button></td>><td>{{item.price*item.quantity}}</td></tr>
+           <tr><td></td><td style="color:red">Total</td><td></td><td></td><td></td><td>{{gtotal}}</td></tr> 
+        </table>
+        <button ng-click="getTotal()">Click Me or else Hit me!!!</button>
+        <p>Pay {{gtotal}} right now!!</p>
+    </div>
+</body>
+</html>
